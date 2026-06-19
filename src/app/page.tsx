@@ -4,6 +4,7 @@ import ExperiencePage from "../components/Experience/page";
 import EducationPage from "../components/Education/page";
 import AwardsPage from "../components/Awards/page";
 import ProjectsPage from "../components/Projects/page";
+import NowPage from "../components/Now/page";
 import ContactPage from "../components/Contact/page";
 import FooterPage from "../components/layout/Footer";
 import NavBarPage from "../components/layout/NavBar";
@@ -23,6 +24,7 @@ export default function Home() {
         <EducationPage />
         <AwardsPage />
         <ProjectsPage />
+        <NowPage />
         <ContactPage />
         <FooterPage />
       </main>
