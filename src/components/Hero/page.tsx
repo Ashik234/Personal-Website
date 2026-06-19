@@ -14,7 +14,7 @@ export default function HeroPage() {
         className="max-w-xl"
       >
         <h1 className="font-serif text-5xl leading-tight text-white md:text-6xl">
-          hi, I&apos;m {siteConfig.name} <span className="inline-block">👋</span>
+          hi, I&apos;m {siteConfig.name}
         </h1>
         <p className="mt-4 text-lg text-neutral-300">{siteConfig.role}</p>
         <p className="mt-4 max-w-md text-neutral-400">{siteConfig.bio}</p>
