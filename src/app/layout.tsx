@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif, Fraunces } from "next/font/google";
+import ThemeProvider from "../components/theme/ThemeProvider";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const serif = Instrument_Serif({
@@ -31,9 +32,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${sans.variable} ${serif.variable} ${fraunces.variable}`}
+      suppressHydrationWarning
+      className={`${sans.variable} ${serif.variable} ${fraunces.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
