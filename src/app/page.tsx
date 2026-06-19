@@ -8,6 +8,8 @@ import ContactPage from "../components/Contact/page";
 import FooterPage from "../components/layout/Footer";
 import NavBarPage from "../components/layout/NavBar";
 import Loader from "../components/loader/Loader";
+import ConsoleGreeting from "../components/easter-eggs/ConsoleGreeting";
+import NameConfetti from "../components/easter-eggs/NameConfetti";
 import "./globals.css";
 
 export default function Home() {
@@ -24,6 +26,8 @@ export default function Home() {
         <ContactPage />
         <FooterPage />
       </main>
+      <ConsoleGreeting />
+      <NameConfetti />
     </Loader>
   );
 }
