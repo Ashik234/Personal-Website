@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { X } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 type Line =
   | { type: "in"; text: string }
@@ -23,14 +24,38 @@ const COMMANDS: { cmd: string; desc: string }[] = [
   { cmd: "exit", desc: "close the terminal" },
 ];
 
+function listExperience(): string[] {
+  return siteConfig.experience.flatMap((j) => [
+    `${j.period}  ${j.role}`,
+    `  ${j.company} · ${j.location}`,
+  ]);
+}
+
+function listEducation(): string[] {
+  return siteConfig.education.flatMap((e) => [
+    `${e.period}  ${e.qualification}`,
+    `  ${e.school} · ${e.location}`,
+  ]);
+}
+
+function listAwards(): string[] {
+  return siteConfig.awards.flatMap((a) => [`${a.date}  ${a.title} — ${a.org}`]);
+}
+
+function listProjects(): string[] {
+  return siteConfig.projects.flatMap((p) => [
+    `${p.name}`,
+    `  ${p.live || p.repo || ""}`,
+  ]);
+}
+
 function output(cmd: string): string[] {
-  const c = cmd.trim().toLowerCase();
+  // strip an optional leading "cd " / "open " so `cd experience` works too
+  const c = cmd.trim().toLowerCase().replace(/^(cd|open)\s+/, "");
   if (!c) return [];
   switch (c) {
     case "whoami":
-      return [
-        "ashik — full-stack dev, front-end focused. one of the builders of SAT (Team Aakhri).",
-      ];
+      return ["ashik — full-stack dev, front-end focused. builder of SAT."];
     case "about":
       return [
         "SAT is a unified CLI that uses AI agents to generate, run and",
@@ -54,6 +79,20 @@ function output(cmd: string): string[] {
       ];
     case "ls":
       return ["experience/  education/  awards/  projects/  secrets/"];
+    case "experience":
+    case "experience/":
+      return listExperience();
+    case "education":
+    case "education/":
+      return listEducation();
+    case "awards":
+    case "awards/":
+      return listAwards();
+    case "projects":
+    case "projects/":
+      return listProjects();
+    case "secrets":
+    case "secrets/":
     case "ls secrets":
     case "cat secrets":
       return ["nice try 😏 — but you found the terminal, that counts."];
