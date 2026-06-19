@@ -61,6 +61,10 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem; /* offset for the fixed navbar */
+  }
   body {
     @apply bg-background text-foreground;
   }
