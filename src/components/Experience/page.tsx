@@ -35,6 +35,17 @@ export default function ExperiencePage() {
             <p className="text-sm text-neutral-400">
               {job.company} · {job.location}
             </p>
+
+            <ul className="mt-3 space-y-1.5">
+              {job.highlights.map((h, j) => (
+                <li
+                  key={j}
+                  className="relative pl-4 text-sm leading-relaxed text-neutral-400 before:absolute before:left-0 before:text-neutral-600 before:content-['—']"
+                >
+                  {h}
+                </li>
+              ))}
+            </ul>
           </motion.li>
         ))}
       </ol>
