@@ -10,7 +10,6 @@ import NavBarPage from "../components/layout/NavBar";
 import Loader from "../components/loader/Loader";
 import ConsoleGreeting from "../components/easter-eggs/ConsoleGreeting";
 import NameConfetti from "../components/easter-eggs/NameConfetti";
-import CustomCursor from "../components/interactions/CustomCursor";
 import "./globals.css";
 
 export default function Home() {
@@ -29,7 +28,6 @@ export default function Home() {
       </main>
       <ConsoleGreeting />
       <NameConfetti />
-      <CustomCursor />
     </Loader>
   );
 }
