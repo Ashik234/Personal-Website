@@ -10,7 +10,8 @@ const config: Config = {
   	extend: {
   		fontFamily: {
   			sans: ['var(--font-sans)', 'sans-serif'],
-  			serif: ['var(--font-serif)', 'serif']
+  			serif: ['var(--font-serif)', 'serif'],
+  			fraunces: ['var(--font-fraunces)', 'serif']
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

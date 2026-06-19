@@ -11,31 +11,58 @@ export type LoaderVariant = 1 | 2 | 3 | 4 | 5;
 const shell =
   "fixed inset-0 z-[100] flex items-center justify-center bg-[hsl(0_0%_4%)]";
 
-/* 1 — Draw-on "A": SVG strokes draw themselves, then a soft fade. */
-function DrawA() {
+/**
+ * 1 — Letter "A" (Fraunces italic): the outline "draws" on left→right, then the
+ * glyph fills solid. Loops while the page loads. `fontClass` kept for previewing.
+ */
+export function LetterA({ fontClass = "font-fraunces italic" }: { fontClass?: string }) {
+  const base = { fontSize: "6.5rem", lineHeight: 1 } as const;
   return (
     <div className={shell}>
-      <svg width="120" height="120" viewBox="0 0 100 100" fill="none">
-        <motion.path
-          d="M20 85 L50 15 L80 85"
-          stroke="white"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 1.1, ease: "easeInOut" }}
-        />
-        <motion.path
-          d="M33 60 L67 60"
-          stroke="white"
-          strokeWidth="4"
-          strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.9, ease: "easeInOut" }}
-        />
-      </svg>
+      <div className="relative">
+        {/* faint full outline so the A always reads */}
+        <span
+          className={`${fontClass} block`}
+          style={{ ...base, WebkitTextStroke: "1px rgba(255,255,255,0.12)", color: "transparent" }}
+          aria-hidden
+        >
+          A
+        </span>
+
+        {/* bright outline that draws on left→right */}
+        <motion.span
+          className={`${fontClass} absolute inset-0 block`}
+          style={{ ...base, WebkitTextStroke: "1.5px white", color: "transparent" }}
+          initial={{ clipPath: "inset(0 100% 0 0)" }}
+          animate={{ clipPath: ["inset(0 100% 0 0)", "inset(0 0% 0 0)", "inset(0 0% 0 0)", "inset(0 0% 0 0)"] }}
+          transition={{
+            duration: 2.2,
+            times: [0, 0.5, 0.85, 1],
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatDelay: 0.2,
+          }}
+        >
+          A
+        </motion.span>
+
+        {/* solid fill fades in after the stroke completes */}
+        <motion.span
+          className={`${fontClass} absolute inset-0 block text-white`}
+          style={base}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 0, 1, 1] }}
+          transition={{
+            duration: 2.2,
+            times: [0, 0.55, 0.8, 1],
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatDelay: 0.2,
+          }}
+        >
+          A
+        </motion.span>
+      </div>
     </div>
   );
 }
@@ -155,7 +182,7 @@ function PulseWipe() {
 }
 
 const map: Record<LoaderVariant, () => JSX.Element> = {
-  1: DrawA,
+  1: () => <LetterA />,
   2: ScaleAK,
   3: RingA,
   4: SplitAK,
@@ -163,6 +190,6 @@ const map: Record<LoaderVariant, () => JSX.Element> = {
 };
 
 export default function LoaderVariant({ variant }: { variant: LoaderVariant }) {
-  const Cmp = map[variant] ?? DrawA;
+  const Cmp = map[variant] ?? (() => <LetterA />);
   return <Cmp />;
 }
