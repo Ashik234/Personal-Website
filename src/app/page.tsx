@@ -4,6 +4,7 @@ import ExperiencePage from "../components/Experience/page";
 import EducationPage from "../components/Education/page";
 import AwardsPage from "../components/Awards/page";
 import ProjectsPage from "../components/Projects/page";
+import ContactPage from "../components/Contact/page";
 import FooterPage from "../components/layout/Footer";
 import NavBarPage from "../components/layout/NavBar";
 import Loader from "../components/loader/Loader";
@@ -20,6 +21,7 @@ export default function Home() {
         <EducationPage />
         <AwardsPage />
         <ProjectsPage />
+        <ContactPage />
         <FooterPage />
       </main>
     </Loader>
