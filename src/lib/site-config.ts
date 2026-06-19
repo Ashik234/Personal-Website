@@ -85,7 +85,7 @@ export const siteConfig = {
     {
       title: "Employee of the Quarter",
       org: "Dignizant Technologies",
-      date: "May 2025",
+      date: "Q1 2025 (Jan – Mar)",
       note: "Awarded for consistent contributions, teamwork and growth within the team.",
     },
   ],
