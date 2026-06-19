@@ -77,6 +77,12 @@ export const siteConfig = {
   ],
   awards: [
     {
+      title: "2nd Prize — Internal AI Hackathon",
+      org: "Dignizant Technologies",
+      date: "Jan 2026",
+      note: "Won second prize with Team Aakhri for building Smart AI Test Suite, an AI-powered automated unit-test generator.",
+    },
+    {
       title: "Pioneer of Learning",
       org: "Dignizant Technologies",
       date: "Oct 2025",
