@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export default function AwardsPage() {
   return (
-    <section id="awards" className="mx-auto max-w-5xl scroll-mt-28 px-6 py-24">
+    <section id="awards" className="snap-section mx-auto max-w-5xl scroll-mt-28 px-6 py-24">
       <motion.h2
         className="font-serif text-3xl text-white md:text-4xl"
         initial={{ opacity: 0, y: 20 }}

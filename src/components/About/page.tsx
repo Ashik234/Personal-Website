@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <section
       id="about"
-      className="mx-auto max-w-5xl scroll-mt-28 px-6 py-24"
+      className="snap-section mx-auto max-w-5xl scroll-mt-28 px-6 py-24"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}

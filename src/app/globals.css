@@ -64,6 +64,11 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 6rem; /* offset for the fixed navbar */
+    scroll-snap-type: y proximity;
+  }
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-margin-top: 6rem;
   }
   body {
     @apply bg-background text-foreground;

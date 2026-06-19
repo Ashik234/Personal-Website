@@ -6,7 +6,7 @@ import SocialLinks from "@/components/ui/SocialLinks";
 
 export default function HeroPage() {
   return (
-    <section className="mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-6 pt-40 md:pt-48">
+    <section className="snap-section mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-6 pt-40 md:pt-48">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
