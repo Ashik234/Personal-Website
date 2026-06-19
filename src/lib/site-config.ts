@@ -40,6 +40,15 @@ export const siteConfig = {
       ],
     },
   ],
+  education: [
+    {
+      qualification: "12th Standard · Junior Software Developer",
+      school: "Vocational Higher Secondary, Chirakkara",
+      location: "Thalassery, Kannur",
+      period: "2020 — 2022",
+      note: "Vocational track that introduced me to software development and set me on the path to becoming a full-stack developer.",
+    },
+  ],
   resumePath: "/resume.pdf",
   photoPath: "/profile.jpg",
   socials: {
