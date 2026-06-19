@@ -87,7 +87,7 @@ export const siteConfig = {
   photoPath: "/profile.jpg",
   socials: {
     github: "https://github.com/Ashik234",
-    linkedin: "https://www.linkedin.com/in/ashik", // placeholder — update with real URL
+    linkedin: "https://www.linkedin.com/in/ashiik",
     email: "ashikash796@gmail.com",
   },
   nav: [
