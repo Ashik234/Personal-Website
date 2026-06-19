@@ -49,6 +49,40 @@ export const siteConfig = {
       note: "Vocational track that introduced me to software development and set me on the path to becoming a full-stack developer.",
     },
   ],
+  projects: [
+    {
+      name: "Matchday",
+      description:
+        "A football World Cup companion app — fixtures, teams and match data in a fast, modern interface.",
+      tech: ["TypeScript", "Next.js", "React"],
+      repo: "https://github.com/Ashik234/Matchday",
+      live: "https://matchday-worldcup.vercel.app",
+    },
+    {
+      name: "DEVNET",
+      description:
+        "A full-stack platform for developers to connect, learn and collaborate, with profiles, posts and discussions.",
+      tech: ["React", "Node.js", "Express", "MongoDB"],
+      repo: "https://github.com/Ashik234/DEVNET-FRONTEND",
+      live: "https://devnetapp.vercel.app",
+    },
+    {
+      name: "Gaming Deck",
+      description:
+        "An e-commerce platform for gaming accessories with secure payments and advanced search and filtering.",
+      tech: ["JavaScript", "React", "Node.js"],
+      repo: "https://github.com/Ashik234/Gaming-Deck",
+      live: "https://gaming-deck.onrender.com",
+    },
+    {
+      name: "InnoByte Services",
+      description:
+        "A client web application built and deployed end to end, from front end to API.",
+      tech: ["JavaScript", "React", "Node.js"],
+      repo: "https://github.com/Ashik234/InnoByte-Services-Client",
+      live: "https://inno-byte-services-client.vercel.app",
+    },
+  ],
   resumePath: "/resume.pdf",
   photoPath: "/profile.jpg",
   socials: {
