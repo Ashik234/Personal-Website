@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Ashik",
   role: "Full-stack developer",
-  bio: "Backend by profession, full-stack by passion. I build things for the web.",
+  bio: "Full-stack developer focused on the front end. I build web interfaces with React and Next.js.",
   about:
-    "I'm a full-stack developer based in Kannur, Kerala, currently building web applications at Dignizant Technologies. I started out self-taught with the MERN stack and now work across the modern TypeScript ecosystem — Next.js and React on the front end, Node.js and databases on the back. I like shipping clean, reliable products and learning a little more with every bug I fix.",
+    "I'm a full-stack developer based in Kannur, Kerala, currently working at Dignizant Technologies. I work mostly on the front end — building interfaces with React, Next.js and TypeScript — and also handle the back end with Node.js and databases when needed. I started self-taught with the MERN stack and have shipped real products since.",
   skills: [
     "TypeScript",
     "Next.js",
