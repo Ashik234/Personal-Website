@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import ResumeButton from "@/components/ui/ResumeButton";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 export default function NavBarPage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,14 +49,13 @@ export default function NavBarPage() {
           ))}
         </div>
 
-        {/* resume — separate top-right pill at top, in-bar once scrolled */}
+        {/* resume + theme toggle — top-right at top, in-bar once scrolled */}
         <div
-          className={`transition-all duration-300 ${
-            isScrolled
-              ? "static"
-              : "fixed right-4 top-4"
+          className={`flex items-center gap-2 transition-all duration-300 ${
+            isScrolled ? "static" : "fixed right-4 top-4"
           }`}
         >
+          <ThemeToggle />
           <ResumeButton />
         </div>
       </div>
