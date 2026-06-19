@@ -13,11 +13,15 @@ export default function HeroPage() {
         transition={{ duration: 0.6 }}
         className="max-w-xl"
       >
-        <h1 className="font-serif text-5xl leading-tight text-white md:text-6xl">
+        <h1 className="font-serif text-5xl leading-tight text-neutral-900 dark:text-white md:text-6xl">
           hi, I&apos;m {siteConfig.name}
         </h1>
-        <p className="mt-4 text-lg text-neutral-300">{siteConfig.role}</p>
-        <p className="mt-4 max-w-md text-neutral-400">{siteConfig.bio}</p>
+        <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
+          {siteConfig.role}
+        </p>
+        <p className="mt-4 max-w-md text-neutral-500 dark:text-neutral-400">
+          {siteConfig.bio}
+        </p>
 
         <div className="mt-8 flex items-center gap-6">
           <ResumeButton />

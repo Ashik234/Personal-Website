@@ -14,9 +14,11 @@ export default function AboutPage() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="font-serif text-3xl text-white md:text-4xl">about</h2>
+        <h2 className="font-serif text-3xl text-neutral-900 dark:text-white md:text-4xl">
+          about
+        </h2>
 
-        <p className="mt-6 max-w-2xl leading-relaxed text-neutral-400">
+        <p className="mt-6 max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-400">
           {siteConfig.about}
         </p>
 
@@ -24,7 +26,7 @@ export default function AboutPage() {
           {siteConfig.skills.map((skill) => (
             <li
               key={skill}
-              className="rounded-full border border-white/15 bg-neutral-900 px-3 py-1 text-sm text-neutral-300"
+              className="rounded-full border border-black/15 bg-neutral-100 px-3 py-1 text-sm text-neutral-700 dark:border-white/15 dark:bg-neutral-900 dark:text-neutral-300"
             >
               {skill}
             </li>
