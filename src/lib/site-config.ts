@@ -7,7 +7,7 @@ export const siteConfig = {
   socials: {
     github: "https://github.com/Ashik234",
     linkedin: "https://www.linkedin.com/in/ashik", // placeholder — update with real URL
-    email: "ashik.k@dignizant.com",
+    email: "ashikash796@gmail.com",
   },
   nav: [
     { label: "Ashik", href: "/" },
