@@ -43,10 +43,10 @@ function listAwards(): string[] {
 }
 
 function listProjects(): string[] {
-  return siteConfig.projects.flatMap((p) => [
-    `${p.name}`,
-    `  ${p.live || p.repo || ""}`,
-  ]);
+  return siteConfig.projects.flatMap((p) => {
+    const proj = p as { name: string; live?: string; repo?: string };
+    return [proj.name, `  ${proj.live || proj.repo || ""}`];
+  });
 }
 
 function output(cmd: string): string[] {
