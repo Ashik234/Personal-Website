@@ -19,9 +19,18 @@ const COMMANDS: { cmd: string; desc: string }[] = [
   { cmd: "about", desc: "what is SAT" },
   { cmd: "sat gen", desc: "generate tests (demo)" },
   { cmd: "sat test", desc: "run tests (demo)" },
+  { cmd: "sat coverage", desc: "show coverage report (demo)" },
+  { cmd: "cat resume", desc: "download my resume" },
   { cmd: "ls", desc: "list things" },
   { cmd: "clear", desc: "clear the screen" },
   { cmd: "exit", desc: "close the terminal" },
+];
+
+// All command strings usable for tab-completion.
+const COMPLETIONS = [
+  "whoami", "about", "help", "clear", "exit",
+  "sat gen", "sat test", "sat coverage", "cat resume",
+  "ls", "experience", "education", "awards", "projects", "secrets",
 ];
 
 function listExperience(): string[] {
@@ -77,6 +86,24 @@ function output(cmd: string): string[] {
         "PASS __tests__/validator.test.ts",
         "Tests: 7 passed, 7 total ✓",
       ];
+    case "sat coverage":
+      return [
+        "$ sat coverage",
+        "File            | % Stmts | % Branch | % Funcs | % Lines",
+        "----------------|---------|----------|---------|--------",
+        "validator.ts    |   98.2  |   95.0   |  100.0  |  98.2",
+        "All files       |   97.6  |   94.1   |   98.8  |  97.6",
+      ];
+    case "cat resume":
+    case "cat resume.pdf":
+      return ["→ opening resume... 📄"];
+    case "sudo":
+    case "sudo su":
+      return ["nice try — you don't have root here. (but I respect the hustle)"];
+    case "rm -rf":
+    case "rm -rf /":
+    case "rm -rf *":
+      return ["whoa 😅 — not deleting anything. this portfolio took effort."];
     case "ls":
       return ["experience/  education/  awards/  projects/  secrets/"];
     case "experience":
@@ -106,6 +133,8 @@ export default function SatTerminal({ onClose }: { onClose: () => void }) {
     ...BANNER.map((text) => ({ type: "out" as const, text })),
   ]);
   const [value, setValue] = useState("");
+  const [history, setHistory] = useState<string[]>([]);
+  const [histIndex, setHistIndex] = useState(-1); // -1 = current input
   const inputRef = useRef<HTMLInputElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
 
@@ -114,6 +143,7 @@ export default function SatTerminal({ onClose }: { onClose: () => void }) {
       const cmd = raw.trim();
       const c = cmd.toLowerCase();
       if (!c) return;
+      setHistory((prev) => [...prev, cmd]);
       if (c === "exit" || c === "quit") {
         onClose();
         return;
@@ -125,6 +155,10 @@ export default function SatTerminal({ onClose }: { onClose: () => void }) {
       if (c === "help") {
         setLines((prev) => [...prev, { type: "in", text: cmd }, { type: "help" }]);
         return;
+      }
+      // side effect: open/download the resume
+      if (c === "cat resume" || c === "cat resume.pdf") {
+        window.open(siteConfig.resumePath, "_blank");
       }
       setLines((prev) => [
         ...prev,
@@ -152,6 +186,34 @@ export default function SatTerminal({ onClose }: { onClose: () => void }) {
     e.preventDefault();
     exec(value);
     setValue("");
+    setHistIndex(-1);
+  };
+
+  const onInputKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (!history.length) return;
+      const next = histIndex === -1 ? history.length - 1 : Math.max(0, histIndex - 1);
+      setHistIndex(next);
+      setValue(history[next]);
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (histIndex === -1) return;
+      const next = histIndex + 1;
+      if (next >= history.length) {
+        setHistIndex(-1);
+        setValue("");
+      } else {
+        setHistIndex(next);
+        setValue(history[next]);
+      }
+    } else if (e.key === "Tab") {
+      e.preventDefault();
+      const q = value.trim().toLowerCase();
+      if (!q) return;
+      const match = COMPLETIONS.find((c) => c.startsWith(q));
+      if (match) setValue(match);
+    }
   };
 
   return (
@@ -217,6 +279,7 @@ export default function SatTerminal({ onClose }: { onClose: () => void }) {
             ref={inputRef}
             value={value}
             onChange={(e) => setValue(e.target.value)}
+            onKeyDown={onInputKey}
             spellCheck={false}
             autoComplete="off"
             className="flex-1 bg-transparent text-white outline-none"
