@@ -75,6 +75,20 @@ export const siteConfig = {
       live: "https://gaming-deck.onrender.com",
     },
   ],
+  awards: [
+    {
+      title: "Pioneer of Learning",
+      org: "Dignizant Technologies",
+      date: "Oct 2025",
+      note: "Recognized during the company's 15th anniversary for continuous learning and contributing to a collaborative learning culture.",
+    },
+    {
+      title: "Employee of the Quarter",
+      org: "Dignizant Technologies",
+      date: "May 2025",
+      note: "Awarded for consistent contributions, teamwork and growth within the team.",
+    },
+  ],
   available: true,
   availabilityText: "Available for work",
   resumePath: "/resume.pdf",
