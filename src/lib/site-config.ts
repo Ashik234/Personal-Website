@@ -51,6 +51,14 @@ export const siteConfig = {
   ],
   projects: [
     {
+      name: "Smart AI Test Suite (SAT)",
+      description:
+        "A unified CLI that uses AI agents to generate, run and auto-fix unit tests — analyzing code structure, dependencies and edge cases to produce ready-to-run tests in minutes.",
+      tech: ["TypeScript", "Node.js", "Groq", "Llama 3.3", "Jest"],
+      repo: "https://github.com/ashik-dignizant/Smart_AI_Suite",
+      live: "https://www.npmjs.com/package/smart-ai-terminal",
+    },
+    {
       name: "Matchday",
       description:
         "A football World Cup companion app — fixtures, teams and match data in a fast, modern interface.",
