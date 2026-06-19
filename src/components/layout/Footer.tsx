@@ -4,6 +4,7 @@ import SocialLinks from "@/components/ui/SocialLinks";
 export default function FooterPage() {
   // Stamped at build time (static export) — reflects the last deploy.
   const lastUpdated = new Date().toLocaleDateString("en-US", {
+    day: "numeric",
     month: "long",
     year: "numeric",
   });

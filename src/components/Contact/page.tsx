@@ -20,7 +20,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-5xl scroll-mt-28 px-6 py-24">
+    <section id="connect" className="mx-auto max-w-5xl scroll-mt-28 px-6 py-24">
       <motion.div
         className="flex flex-col items-center text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export default function ContactPage() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="font-serif text-3xl text-white md:text-4xl">contact</h2>
+        <h2 className="font-serif text-3xl text-white md:text-4xl">connect</h2>
 
         <div className="mt-6 flex items-center gap-3">
           <a

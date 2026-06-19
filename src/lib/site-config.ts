@@ -116,7 +116,7 @@ export const siteConfig = {
     { label: "Ashik", href: "/" },
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "Connect", href: "#connect" },
   ],
 } as const;
 
