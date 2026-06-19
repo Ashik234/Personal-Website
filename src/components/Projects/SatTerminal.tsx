@@ -1,31 +1,36 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { X } from "lucide-react";
 
-type Line = { type: "in" | "out"; text: string };
+type Line =
+  | { type: "in"; text: string }
+  | { type: "out"; text: string }
+  | { type: "help" };
 
 const BANNER = [
   "Smart AI Test Suite (SAT) v1.0",
-  "AI-powered unit-test generation. Type `help` to start.",
+  "AI-powered unit-test generation. Type or click `help` to start.",
 ];
 
-function run(cmd: string): string[] {
+// Commands shown in the interactive help table (clickable).
+const COMMANDS: { cmd: string; desc: string }[] = [
+  { cmd: "whoami", desc: "who built this" },
+  { cmd: "about", desc: "what is SAT" },
+  { cmd: "sat gen", desc: "generate tests (demo)" },
+  { cmd: "sat test", desc: "run tests (demo)" },
+  { cmd: "ls", desc: "list things" },
+  { cmd: "clear", desc: "clear the screen" },
+  { cmd: "exit", desc: "close the terminal" },
+];
+
+function output(cmd: string): string[] {
   const c = cmd.trim().toLowerCase();
   if (!c) return [];
   switch (c) {
-    case "help":
-      return [
-        "available commands:",
-        "  whoami      who built this",
-        "  about       what is SAT",
-        "  sat gen     generate tests (demo)",
-        "  sat test    run tests (demo)",
-        "  ls          list things",
-        "  clear       clear the screen",
-        "  exit        close the terminal",
-      ];
     case "whoami":
-      return ["ashik — full-stack dev, front-end focused. one of the builders of SAT (Team Aakhri)."];
+      return [
+        "ashik — full-stack dev, front-end focused. one of the builders of SAT (Team Aakhri).",
+      ];
     case "about":
       return [
         "SAT is a unified CLI that uses AI agents to generate, run and",
@@ -52,21 +57,44 @@ function run(cmd: string): string[] {
     case "ls secrets":
     case "cat secrets":
       return ["nice try 😏 — but you found the terminal, that counts."];
-    case "exit":
-    case "quit":
-      return ["__CLOSE__"];
     default:
       return [`command not found: ${cmd} — type \`help\``];
   }
 }
 
 export default function SatTerminal({ onClose }: { onClose: () => void }) {
-  const [lines, setLines] = useState<Line[]>(
-    BANNER.map((text) => ({ type: "out" as const, text })),
-  );
+  const [lines, setLines] = useState<Line[]>([
+    ...BANNER.map((text) => ({ type: "out" as const, text })),
+  ]);
   const [value, setValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+
+  const exec = useCallback(
+    (raw: string) => {
+      const cmd = raw.trim();
+      const c = cmd.toLowerCase();
+      if (!c) return;
+      if (c === "exit" || c === "quit") {
+        onClose();
+        return;
+      }
+      if (c === "clear") {
+        setLines([]);
+        return;
+      }
+      if (c === "help") {
+        setLines((prev) => [...prev, { type: "in", text: cmd }, { type: "help" }]);
+        return;
+      }
+      setLines((prev) => [
+        ...prev,
+        { type: "in", text: cmd },
+        ...output(cmd).map((text) => ({ type: "out" as const, text })),
+      ]);
+    },
+    [onClose],
+  );
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -83,22 +111,8 @@ export default function SatTerminal({ onClose }: { onClose: () => void }) {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    const cmd = value;
+    exec(value);
     setValue("");
-    const out = run(cmd);
-    if (out[0] === "__CLOSE__") {
-      onClose();
-      return;
-    }
-    if (cmd.trim().toLowerCase() === "clear") {
-      setLines([]);
-      return;
-    }
-    setLines((prev) => [
-      ...prev,
-      { type: "in", text: cmd },
-      ...out.map((text) => ({ type: "out" as const, text })),
-    ]);
   };
 
   return (
@@ -122,15 +136,41 @@ export default function SatTerminal({ onClose }: { onClose: () => void }) {
       </div>
 
       <div ref={bodyRef} className="flex-1 overflow-y-auto px-3 py-2 leading-relaxed">
-        {lines.map((l, i) => (
-          <p
-            key={i}
-            className={l.type === "in" ? "text-white" : "text-neutral-400"}
-          >
-            {l.type === "in" ? <span className="text-neutral-600">$ </span> : null}
-            {l.text}
-          </p>
-        ))}
+        {lines.map((l, i) => {
+          if (l.type === "help") {
+            return (
+              <div key={i} className="my-1">
+                <p className="text-neutral-500">available commands (click to run):</p>
+                {COMMANDS.map((c) => (
+                  <button
+                    key={c.cmd}
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      exec(c.cmd);
+                    }}
+                    className="flex w-full items-baseline gap-2 text-left transition hover:text-white"
+                  >
+                    <span className="text-white">{c.cmd}</span>
+                    <span className="min-w-0 flex-1 truncate text-neutral-700">
+                      {"─".repeat(40)}
+                    </span>
+                    <span className="shrink-0 text-neutral-400">{c.desc}</span>
+                  </button>
+                ))}
+              </div>
+            );
+          }
+          return (
+            <p
+              key={i}
+              className={l.type === "in" ? "text-white" : "text-neutral-400"}
+            >
+              {l.type === "in" ? <span className="text-neutral-600">$ </span> : null}
+              {l.text}
+            </p>
+          );
+        })}
 
         <form onSubmit={submit} className="flex items-center gap-1">
           <span className="text-neutral-600">$</span>
