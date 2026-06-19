@@ -1,14 +1,16 @@
+"use client";
+import { motion } from "motion/react";
 import { siteConfig } from "@/lib/site-config";
 import SocialLinks from "@/components/ui/SocialLinks";
 
-export default function FooterPage() {
-  // Stamped at build time (static export) — reflects the last deploy.
-  const lastUpdated = new Date().toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+// Stamped when the bundle is built.
+const LAST_UPDATED = new Date().toLocaleDateString("en-US", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
 
+export default function FooterPage() {
   return (
     <footer className="border-t border-white/10 px-6 py-8">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
@@ -23,11 +25,31 @@ export default function FooterPage() {
             </span>
           )}
           <p className="text-sm text-neutral-500">
-            © {siteConfig.name} · Last updated {lastUpdated}
+            © {siteConfig.name} · Last updated {LAST_UPDATED}
           </p>
         </div>
         <SocialLinks />
       </div>
+
+      {/* reward — only really seen by people who scroll all the way down */}
+      <motion.p
+        className="mx-auto mt-8 max-w-5xl text-center text-xs text-neutral-600"
+        initial={{ opacity: 0, y: 8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{ duration: 0.6 }}
+      >
+        you scrolled all the way down — respect. now go{" "}
+        <a
+          href={siteConfig.socials.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-neutral-400 underline underline-offset-2 transition hover:text-white"
+        >
+          check out my code
+        </a>
+        . 👀
+      </motion.p>
     </footer>
   );
 }
