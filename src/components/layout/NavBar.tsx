@@ -19,7 +19,7 @@ export default function NavBarPage() {
     <nav
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "border-b border-white/10 bg-neutral-900/70 py-3 backdrop-blur-md"
+          ? "border-b border-black/10 bg-neutral-100/70 py-3 backdrop-blur-md dark:border-white/10 dark:bg-neutral-900/70"
           : "border-b border-transparent bg-transparent py-4"
       }`}
     >
@@ -33,15 +33,17 @@ export default function NavBarPage() {
           className={`flex items-center gap-x-6 transition-all duration-300 ${
             isScrolled
               ? "rounded-none border-0 bg-transparent px-0 py-0"
-              : "rounded-full border border-white/10 bg-neutral-900 px-6 py-3"
+              : "rounded-full border border-black/10 bg-neutral-100 px-6 py-3 dark:border-white/10 dark:bg-neutral-900"
           }`}
         >
           {siteConfig.nav.map((item, i) => (
             <Link
               key={item.label}
               href={item.href}
-              className={`text-sm transition hover:text-white ${
-                i === 0 ? "font-bold text-white" : "text-neutral-300"
+              className={`text-sm transition hover:text-black dark:hover:text-white ${
+                i === 0
+                  ? "font-bold text-neutral-900 dark:text-white"
+                  : "text-neutral-600 dark:text-neutral-300"
               }`}
             >
               {item.label}

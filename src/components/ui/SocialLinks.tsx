@@ -16,7 +16,7 @@ export default function SocialLinks({ className = "" }: { className?: string }) 
           target={href.startsWith("http") ? "_blank" : undefined}
           rel="noopener noreferrer"
           aria-label={label}
-          className="text-neutral-400 transition hover:text-white"
+          className="text-neutral-500 transition hover:text-black dark:text-neutral-400 dark:hover:text-white"
         >
           <Icon className="h-5 w-5" />
         </a>
