@@ -2,6 +2,7 @@ import HeroPage from "../components/Hero/page";
 import AboutPage from "../components/About/page";
 import ExperiencePage from "../components/Experience/page";
 import EducationPage from "../components/Education/page";
+import AwardsPage from "../components/Awards/page";
 import ProjectsPage from "../components/Projects/page";
 import FooterPage from "../components/layout/Footer";
 import NavBarPage from "../components/layout/NavBar";
@@ -17,6 +18,7 @@ export default function Home() {
         <AboutPage />
         <ExperiencePage />
         <EducationPage />
+        <AwardsPage />
         <ProjectsPage />
         <FooterPage />
       </main>
