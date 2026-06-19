@@ -74,14 +74,6 @@ export const siteConfig = {
       repo: "https://github.com/Ashik234/Gaming-Deck",
       live: "https://gaming-deck.onrender.com",
     },
-    {
-      name: "InnoByte Services",
-      description:
-        "A client web application built and deployed end to end, from front end to API.",
-      tech: ["JavaScript", "React", "Node.js"],
-      repo: "https://github.com/Ashik234/InnoByte-Services-Client",
-      live: "https://inno-byte-services-client.vercel.app",
-    },
   ],
   available: true,
   availabilityText: "Available for work",
