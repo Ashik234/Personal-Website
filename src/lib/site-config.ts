@@ -110,7 +110,7 @@ export const siteConfig = {
   socials: {
     github: "https://github.com/Ashik234",
     linkedin: "https://www.linkedin.com/in/ashiik",
-    email: "ashikash796@gmail.com",
+    email: "ashikk.dev@gmail.com",
   },
   nav: [
     { label: "Ashik", href: "/" },

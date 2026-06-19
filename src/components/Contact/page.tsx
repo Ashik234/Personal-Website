@@ -1,24 +1,8 @@
 "use client";
-import { useState } from "react";
-import { Check, Copy } from "lucide-react";
 import { motion } from "motion/react";
-import { siteConfig } from "@/lib/site-config";
 import SocialLinks from "@/components/ui/SocialLinks";
 
 export default function ContactPage() {
-  const [copied, setCopied] = useState(false);
-  const email = siteConfig.socials.email;
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      /* clipboard unavailable — ignore */
-    }
-  };
-
   return (
     <section id="connect" className="mx-auto max-w-5xl scroll-mt-28 px-6 py-24">
       <motion.div
@@ -29,28 +13,6 @@ export default function ContactPage() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="font-serif text-3xl text-white md:text-4xl">connect</h2>
-
-        <div className="mt-6 flex items-center gap-3">
-          <a
-            href={`mailto:${email}`}
-            className="text-lg text-neutral-300 transition hover:text-white md:text-xl"
-          >
-            {email}
-          </a>
-          <button
-            type="button"
-            onClick={copyEmail}
-            aria-label="Copy email address"
-            className="text-neutral-500 transition hover:text-white"
-          >
-            {copied ? (
-              <Check className="h-4 w-4" />
-            ) : (
-              <Copy className="h-4 w-4" />
-            )}
-          </button>
-        </div>
-
         <SocialLinks className="mt-8" />
       </motion.div>
     </section>
