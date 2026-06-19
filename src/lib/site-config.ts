@@ -88,7 +88,7 @@ export const siteConfig = {
       title: "2nd Prize — Internal AI Hackathon",
       org: "Dignizant Technologies",
       date: "Jan 2026",
-      note: "Won second prize for building Smart AI Test Suite, an AI-powered automated unit-test generator.",
+      note: "Won second prize as a team for building Smart AI Test Suite, an AI-powered automated unit-test generator.",
     },
     {
       title: "Pioneer of Learning",
