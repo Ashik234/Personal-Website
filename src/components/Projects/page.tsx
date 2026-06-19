@@ -13,7 +13,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
   return (
     <motion.article
-      className={`relative flex flex-col rounded-2xl border border-white/10 bg-neutral-900/50 p-6 transition hover:border-white/20 ${
+      className={`relative flex flex-col rounded-2xl border border-black/10 bg-neutral-100/50 p-6 transition hover:border-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:hover:border-white/20 ${
         hasTerminal ? "group cursor-pointer" : ""
       }`}
       initial={{ opacity: 0, y: 20 }}
@@ -23,15 +23,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       onClick={() => hasTerminal && setOpen(true)}
     >
       <div className="flex items-start justify-between gap-4">
-        <h3 className="text-lg font-medium text-white">{project.name}</h3>
-        <div className="flex items-center gap-3 text-neutral-400">
+        <h3 className="text-lg font-medium text-neutral-900 dark:text-white">
+          {project.name}
+        </h3>
+        <div className="flex items-center gap-3 text-neutral-500 dark:text-neutral-400">
           {project.repo && (
             <a
               href={project.repo}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.name} on GitHub`}
-              className="transition hover:text-white"
+              className="transition hover:text-black dark:hover:text-white"
               onClick={(e) => e.stopPropagation()}
             >
               <Github className="h-4 w-4" />
@@ -43,7 +45,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.name} live demo`}
-              className="transition hover:text-white"
+              className="transition hover:text-black dark:hover:text-white"
               onClick={(e) => e.stopPropagation()}
             >
               <ExternalLink className="h-4 w-4" />
@@ -52,7 +54,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
       </div>
 
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-400">
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
         {project.description}
       </p>
 
@@ -60,7 +62,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {project.tech.map((t) => (
           <li
             key={t}
-            className="rounded-full border border-white/10 px-2.5 py-0.5 text-xs text-neutral-400"
+            className="rounded-full border border-black/10 px-2.5 py-0.5 text-xs text-neutral-600 dark:border-white/10 dark:text-neutral-400"
           >
             {t}
           </li>
@@ -68,7 +70,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       </ul>
 
       {hasTerminal && (
-        <span className="mt-4 flex items-center gap-1.5 font-mono text-xs text-neutral-600 transition group-hover:text-neutral-300">
+        <span className="mt-4 flex items-center gap-1.5 font-mono text-xs text-neutral-400 transition group-hover:text-neutral-700 dark:text-neutral-600 dark:group-hover:text-neutral-300">
           <TerminalSquare className="h-3.5 w-3.5" />
           &gt; click to open terminal
         </span>
@@ -83,7 +85,7 @@ export default function ProjectsPage() {
   return (
     <section id="projects" className="snap-section mx-auto max-w-5xl scroll-mt-28 px-6 py-24">
       <motion.h2
-        className="font-serif text-3xl text-white md:text-4xl"
+        className="font-serif text-3xl text-neutral-900 dark:text-white md:text-4xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}

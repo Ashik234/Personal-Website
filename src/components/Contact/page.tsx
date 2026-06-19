@@ -12,7 +12,9 @@ export default function ContactPage() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="font-serif text-3xl text-white md:text-4xl">connect</h2>
+        <h2 className="font-serif text-3xl text-neutral-900 dark:text-white md:text-4xl">
+          connect
+        </h2>
         <SocialLinks className="mt-8" />
       </motion.div>
     </section>
