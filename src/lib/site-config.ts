@@ -57,6 +57,7 @@ export const siteConfig = {
       tech: ["TypeScript", "Node.js", "Groq", "Llama 3.3", "Jest"],
       repo: "",
       live: "https://www.npmjs.com/package/smart-ai-terminal",
+      terminal: true,
     },
     {
       name: "Matchday",
