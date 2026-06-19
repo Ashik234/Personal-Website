@@ -53,13 +53,20 @@ export default function Loader({ children }: { children: React.ReactNode }) {
         )}
       </AnimatePresence>
 
-      <motion.div
-        initial={{ filter: "blur(12px)" }}
-        animate={{ filter: loading ? "blur(12px)" : "blur(0px)" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        {children}
-      </motion.div>
+      {loading ? (
+        // While loading, blur the page. NOTE: a CSS `filter` on an ancestor
+        // creates a containing block for fixed children, so once loaded we
+        // render the children WITHOUT this wrapper — otherwise the fixed
+        // navbar would scroll away with the page instead of staying pinned.
+        <motion.div
+          initial={{ filter: "blur(12px)" }}
+          animate={{ filter: "blur(12px)" }}
+        >
+          {children}
+        </motion.div>
+      ) : (
+        children
+      )}
     </>
   );
 }
