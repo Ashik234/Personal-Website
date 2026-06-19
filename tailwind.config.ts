@@ -9,10 +9,8 @@ const config: Config = {
   theme: {
   	extend: {
   		fontFamily: {
-  			'protest-revolution': [
-  				'Protest Revolution"',
-  				'sans-serif'
-  			]
+  			sans: ['var(--font-sans)', 'sans-serif'],
+  			serif: ['var(--font-serif)', 'serif']
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
