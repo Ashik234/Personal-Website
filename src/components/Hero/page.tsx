@@ -32,7 +32,7 @@ export default function HeroPage() {
         transition={{ duration: 0.6, delay: 0.15 }}
         className="shrink-0"
       >
-        <div className="overflow-hidden rounded-2xl border border-white/10 rotate-2">
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-neutral-800 rotate-2">
           <Image
             src={siteConfig.photoPath}
             alt={siteConfig.name}
