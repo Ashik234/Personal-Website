@@ -6,7 +6,7 @@ export default function EducationPage() {
   return (
     <section id="education" className="snap-section mx-auto max-w-5xl scroll-mt-28 px-6 py-24">
       <motion.h2
-        className="font-serif text-3xl text-white md:text-4xl"
+        className="font-serif text-3xl text-neutral-900 dark:text-white md:text-4xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -15,7 +15,7 @@ export default function EducationPage() {
         education
       </motion.h2>
 
-      <ol className="mt-10 border-l border-white/15">
+      <ol className="mt-10 border-l border-black/15 dark:border-white/15">
         {siteConfig.education.map((edu, i) => (
           <motion.li
             key={`${edu.school}-${edu.period}`}
@@ -26,19 +26,19 @@ export default function EducationPage() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
           >
             {/* timeline dot */}
-            <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border border-white/30 bg-neutral-900" />
+            <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border border-black/30 bg-neutral-100 dark:border-white/30 dark:bg-neutral-900" />
 
             <p className="text-xs uppercase tracking-wider text-neutral-500">
               {edu.period}
             </p>
-            <h3 className="mt-1 text-lg font-medium text-white">
+            <h3 className="mt-1 text-lg font-medium text-neutral-900 dark:text-white">
               {edu.qualification}
             </h3>
-            <p className="text-sm text-neutral-400">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
               {edu.school} · {edu.location}
             </p>
 
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-400">
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
               {edu.note}
             </p>
           </motion.li>
