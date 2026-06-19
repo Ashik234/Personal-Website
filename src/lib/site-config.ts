@@ -83,6 +83,8 @@ export const siteConfig = {
       live: "https://inno-byte-services-client.vercel.app",
     },
   ],
+  available: true,
+  availabilityText: "Available for work",
   resumePath: "/resume.pdf",
   photoPath: "/profile.jpg",
   socials: {
