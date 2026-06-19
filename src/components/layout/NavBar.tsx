@@ -1,31 +1,44 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
+import ResumeButton from "@/components/ui/ResumeButton";
 
 export default function NavBarPage() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div
-      className={`fixed top-4 left-1/2 -translate-x-1/2 flex gap-x-6 items-center rounded-full px-6 py-3 transition-all F
-        ${isScrolled ? "bg-white/30 backdrop-blur-md shadow-md" : "bg-gray-800"}
-      `}
-    >
-      <h1 className="text-white font-bold">Ashik</h1>
+    <>
+      <nav
+        className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 flex items-center gap-x-6 rounded-full px-6 py-3 transition-all
+          ${
+            isScrolled
+              ? "border border-white/10 bg-neutral-900/70 backdrop-blur-md"
+              : "border border-white/10 bg-neutral-900"
+          }`}
+      >
+        {siteConfig.nav.map((item, i) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            className={`text-sm transition hover:text-white ${
+              i === 0 ? "font-bold text-white" : "text-neutral-300"
+            }`}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
 
-      <div className="flex space-x-6">
-        <h1 className="text-white cursor-pointer hover:text-gray-300">About</h1>
-        <h1 className="text-white cursor-pointer hover:text-gray-300">Projects</h1>
-        <h1 className="text-white cursor-pointer hover:text-gray-300">Contact</h1>
+      <div className="fixed top-4 right-4 z-50">
+        <ResumeButton />
       </div>
-    </div>
+    </>
   );
 }
