@@ -1,6 +1,7 @@
 import HeroPage from "../components/Hero/page";
 import AboutPage from "../components/About/page";
 import ExperiencePage from "../components/Experience/page";
+import EducationPage from "../components/Education/page";
 import FooterPage from "../components/layout/Footer";
 import NavBarPage from "../components/layout/NavBar";
 import Loader from "../components/loader/Loader";
@@ -14,6 +15,7 @@ export default function Home() {
         <HeroPage />
         <AboutPage />
         <ExperiencePage />
+        <EducationPage />
         <FooterPage />
       </main>
     </Loader>
