@@ -104,6 +104,10 @@ export const siteConfig = {
       note: "Awarded for consistent contributions, teamwork and growth within the team.",
     },
   ],
+  now: [
+    "Learning Python",
+    "Building Game Zone",
+  ],
   available: true,
   availabilityText: "Available for work",
   resumePath: "/resume.pdf",
