@@ -29,24 +29,28 @@ export default function ProjectsPage() {
             <div className="flex items-start justify-between gap-4">
               <h3 className="text-lg font-medium text-white">{project.name}</h3>
               <div className="flex items-center gap-3 text-neutral-400">
-                <a
-                  href={project.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${project.name} on GitHub`}
-                  className="transition hover:text-white"
-                >
-                  <Github className="h-4 w-4" />
-                </a>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${project.name} live demo`}
-                  className="transition hover:text-white"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                </a>
+                {project.repo && (
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.name} on GitHub`}
+                    className="transition hover:text-white"
+                  >
+                    <Github className="h-4 w-4" />
+                  </a>
+                )}
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.name} live demo`}
+                    className="transition hover:text-white"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                )}
               </div>
             </div>
 

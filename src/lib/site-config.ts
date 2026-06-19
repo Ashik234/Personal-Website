@@ -55,7 +55,7 @@ export const siteConfig = {
       description:
         "A unified CLI that uses AI agents to generate, run and auto-fix unit tests — analyzing code structure, dependencies and edge cases to produce ready-to-run tests in minutes.",
       tech: ["TypeScript", "Node.js", "Groq", "Llama 3.3", "Jest"],
-      repo: "https://github.com/ashik-dignizant/Smart_AI_Suite",
+      repo: "",
       live: "https://www.npmjs.com/package/smart-ai-terminal",
     },
     {
@@ -88,7 +88,7 @@ export const siteConfig = {
       title: "2nd Prize — Internal AI Hackathon",
       org: "Dignizant Technologies",
       date: "Jan 2026",
-      note: "Won second prize with Team Aakhri for building Smart AI Test Suite, an AI-powered automated unit-test generator.",
+      note: "Won second prize for building Smart AI Test Suite, an AI-powered automated unit-test generator.",
     },
     {
       title: "Pioneer of Learning",
