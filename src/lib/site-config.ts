@@ -20,7 +20,8 @@ export const siteConfig = {
     {
       role: "Full-stack Developer",
       company: "Dignizant Technologies",
-      location: "Kerala, India",
+      companyUrl: "https://dignizant.com/",
+      location: "Surat, Gujarat",
       period: "2024 — Present",
       highlights: [
         "Build and ship full-stack web applications end to end, from API and database design to React/Next.js front ends.",
@@ -30,7 +31,8 @@ export const siteConfig = {
     },
     {
       role: "MERN Stack Developer (Training & Projects)",
-      company: "KINFRA Industrial Park · BROTOTYPE",
+      company: "Brototype",
+      companyUrl: "http://brototype.com/",
       location: "Kozhikode, Kerala",
       period: "2022 — 2024",
       highlights: [
@@ -90,18 +92,24 @@ export const siteConfig = {
       org: "Dignizant Technologies",
       date: "Jan 2026",
       note: "Won second prize as a team for building Smart AI Test Suite, an AI-powered automated unit-test generator.",
+      image: "/awards/ai-hackathon.jpg",
+      link: "",
     },
     {
       title: "Pioneer of Learning",
       org: "Dignizant Technologies",
       date: "Oct 2025",
       note: "Recognized during the company's 15th anniversary for continuous learning and contributing to a collaborative learning culture.",
+      image: "/awards/pioneer-of-learning.jpg",
+      link: "https://www.linkedin.com/posts/ashiik_continuouslearning-gratitude-dignizanttechnologies-activity-7382651863285915648-0df4",
     },
     {
       title: "Employee of the Quarter",
       org: "Dignizant Technologies",
       date: "Q1 2025 (Jan – Mar)",
       note: "Awarded for consistent contributions, teamwork and growth within the team.",
+      image: "/awards/employee-of-the-quarter.jpg",
+      link: "https://www.linkedin.com/posts/ashiik_feeling-truly-grateful-and-excited-to-be-activity-7326222893812514817-nZrT",
     },
   ],
   now: [
