@@ -3,12 +3,16 @@ import { motion } from "motion/react";
 import { siteConfig } from "@/lib/site-config";
 import SocialLinks from "@/components/ui/SocialLinks";
 
-// Stamped when the bundle is built.
-const LAST_UPDATED = new Date().toLocaleDateString("en-US", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-});
+// Last git commit date, injected at build time via next.config.mjs.
+const commitDate = process.env.NEXT_PUBLIC_LAST_COMMIT_DATE;
+const LAST_UPDATED = (commitDate ? new Date(commitDate) : new Date()).toLocaleDateString(
+  "en-US",
+  {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }
+);
 
 export default function FooterPage() {
   return (

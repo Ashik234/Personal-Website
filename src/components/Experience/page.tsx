@@ -35,7 +35,23 @@ export default function ExperiencePage() {
               {job.role}
             </h3>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {job.company} · {job.location}
+              {(() => {
+                const company: string = job.company;
+                const companyUrl: string | undefined = job.companyUrl;
+                if (companyUrl)
+                  return (
+                    <a
+                      href={companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-neutral-700 underline decoration-dotted underline-offset-2 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white sm:whitespace-nowrap"
+                    >
+                      {company}
+                    </a>
+                  );
+                return company;
+              })()}{" "}
+              · {job.location}
             </p>
 
             <ul className="mt-3 space-y-1.5">

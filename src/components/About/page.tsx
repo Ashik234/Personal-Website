@@ -1,8 +1,15 @@
 "use client";
 import { motion } from "motion/react";
 import { siteConfig } from "@/lib/site-config";
+import DignizantLink from "@/components/ui/DignizantLink";
+
+const COMPANY = "Dignizant Technologies";
 
 export default function AboutPage() {
+  // Split the about text around the company name so it can be rendered as a link.
+  const [beforeCompany, ...rest] = siteConfig.about.split(COMPANY);
+  const afterCompany = rest.join(COMPANY);
+
   return (
     <section
       id="about"
@@ -19,7 +26,15 @@ export default function AboutPage() {
         </h2>
 
         <p className="mt-6 max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-400">
-          {siteConfig.about}
+          {rest.length > 0 ? (
+            <>
+              {beforeCompany}
+              <DignizantLink />
+              {afterCompany}
+            </>
+          ) : (
+            siteConfig.about
+          )}
         </p>
 
         <ul className="mt-8 flex flex-wrap gap-2">
