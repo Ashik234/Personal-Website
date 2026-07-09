@@ -8,7 +8,7 @@ export default function AwardsPage() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="awards" className="snap-section mx-auto max-w-5xl scroll-mt-28 px-6 py-24">
+    <section id="awards" className="snap-section mx-auto max-w-5xl scroll-mt-28 px-6 py-16 sm:py-24">
       <motion.h2
         className="font-serif text-3xl text-neutral-900 dark:text-white md:text-4xl"
         initial={{ opacity: 0, y: 20 }}

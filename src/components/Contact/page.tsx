@@ -4,7 +4,7 @@ import SocialLinks from "@/components/ui/SocialLinks";
 
 export default function ContactPage() {
   return (
-    <section id="connect" className="snap-section mx-auto max-w-5xl scroll-mt-28 px-6 py-24">
+    <section id="connect" className="snap-section mx-auto max-w-5xl scroll-mt-28 px-6 py-16 sm:py-24">
       <motion.div
         className="flex flex-col items-center text-center"
         initial={{ opacity: 0, y: 20 }}
