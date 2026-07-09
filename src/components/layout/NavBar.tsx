@@ -25,15 +25,15 @@ export default function NavBarPage() {
     >
       <div
         className={`mx-auto flex max-w-5xl items-center px-4 transition-all duration-300 ${
-          isScrolled ? "justify-between" : "justify-center"
+          isScrolled ? "justify-between" : "justify-between md:justify-center"
         }`}
       >
         {/* links — a floating pill at top, inline once scrolled */}
         <div
-          className={`flex items-center gap-x-6 transition-all duration-300 ${
+          className={`flex items-center gap-x-4 transition-all duration-300 sm:gap-x-6 ${
             isScrolled
               ? "rounded-none border-0 bg-transparent px-0 py-0"
-              : "rounded-full border border-black/10 bg-neutral-100 px-6 py-3 dark:border-white/10 dark:bg-neutral-900"
+              : "rounded-full border border-black/10 bg-neutral-100 px-4 py-2.5 dark:border-white/10 dark:bg-neutral-900 sm:px-6 sm:py-3"
           }`}
         >
           {siteConfig.nav.map((item, i) => (
@@ -51,14 +51,14 @@ export default function NavBarPage() {
           ))}
         </div>
 
-        {/* resume + theme toggle — top-right at top, in-bar once scrolled */}
+        {/* resume + theme toggle — in-flow on mobile, top-right at top on desktop, in-bar once scrolled */}
         <div
           className={`flex items-center gap-2 transition-all duration-300 ${
-            isScrolled ? "static" : "fixed right-4 top-4"
+            isScrolled ? "static" : "static md:fixed md:right-4 md:top-4"
           }`}
         >
           <ThemeToggle />
-          <ResumeButton />
+          <ResumeButton className="max-sm:hidden" />
         </div>
       </div>
     </nav>
