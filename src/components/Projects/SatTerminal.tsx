@@ -218,7 +218,7 @@ export default function SatTerminal({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-      className="absolute inset-0 z-20 flex flex-col rounded-2xl border border-white/20 bg-black/95 font-mono text-xs"
+      className="fixed inset-3 z-50 flex flex-col rounded-2xl border border-white/20 bg-black/95 font-mono text-xs md:absolute md:inset-0 md:z-20"
       onClick={() => inputRef.current?.focus()}
     >
       <div className="flex items-center justify-between border-b border-white/10 px-3 py-2">
