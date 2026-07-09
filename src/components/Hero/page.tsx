@@ -6,14 +6,14 @@ import SocialLinks from "@/components/ui/SocialLinks";
 
 export default function HeroPage() {
   return (
-    <section className="snap-section mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-6 pt-40 md:pt-48">
+    <section className="snap-section mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-6 pt-32 sm:pt-40 md:pt-48">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="max-w-xl"
       >
-        <h1 className="font-serif text-5xl leading-tight text-neutral-900 dark:text-white md:text-6xl">
+        <h1 className="font-serif text-4xl leading-tight text-neutral-900 dark:text-white sm:text-5xl md:text-6xl">
           hi, I&apos;m {siteConfig.name}
         </h1>
         <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
@@ -23,7 +23,7 @@ export default function HeroPage() {
           {siteConfig.bio}
         </p>
 
-        <div className="mt-8 flex items-center gap-6">
+        <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6">
           <ResumeButton />
           <SocialLinks />
         </div>
