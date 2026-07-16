@@ -19,7 +19,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Ashik — Full-stack Developer",
+  title: "Ashik — MERN Stack Developer",
   description:
     "Personal website of Ashik — backend by profession, full-stack by passion.",
 };

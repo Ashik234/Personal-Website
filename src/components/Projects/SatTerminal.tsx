@@ -64,7 +64,7 @@ function output(cmd: string): string[] {
   if (!c) return [];
   switch (c) {
     case "whoami":
-      return ["ashik — full-stack dev, front-end focused. builder of SAT."];
+      return ["ashik — mern stack dev, front-end focused. builder of SAT."];
     case "about":
       return [
         "SAT is a unified CLI that uses AI agents to generate, run and",

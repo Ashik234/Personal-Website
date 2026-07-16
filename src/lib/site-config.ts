@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Ashik",
-  role: "Full-stack developer",
-  bio: "Full-stack developer focused on the front end. I build web interfaces with React and Next.js.",
+  role: "MERN stack developer",
+  bio: "MERN stack developer focused on the front end. I build web interfaces with React and Next.js.",
   about:
-    "I'm a full-stack developer based in Kannur, Kerala, currently working at Dignizant Technologies. I work mostly on the front end — building interfaces with React, Next.js and TypeScript — and also handle the back end with Node.js and databases when needed. I started self-taught with the MERN stack and have shipped real products since.",
+    "I'm a MERN stack developer based in Kannur, Kerala, currently working at Dignizant Technologies. I work mostly on the front end — building interfaces with React, Next.js and TypeScript — and also handle the back end with Node.js and databases when needed. I started self-taught with the MERN stack and have shipped real products since.",
   skills: [
     "TypeScript",
     "Next.js",
@@ -18,7 +18,7 @@ export const siteConfig = {
   ],
   experience: [
     {
-      role: "Full-stack Developer",
+      role: "MERN Stack Developer",
       company: "Dignizant Technologies",
       companyUrl: "https://dignizant.com/",
       location: "Surat, Gujarat",
@@ -30,11 +30,11 @@ export const siteConfig = {
       ],
     },
     {
-      role: "MERN Stack Developer (Training & Projects)",
+      role: "MERN Stack Developer (Training)",
       company: "Brototype",
       companyUrl: "http://brototype.com/",
       location: "Kozhikode, Kerala",
-      period: "2022 — 2024",
+      period: "2023 — 2024",
       highlights: [
         "Completed an intensive mentored program covering front-end, back-end and full-stack development.",
         "Built multiple full-stack projects with the MERN stack (MongoDB, Express, React, Node.js).",
@@ -48,7 +48,7 @@ export const siteConfig = {
       school: "Vocational Higher Secondary, Chirakkara",
       location: "Thalassery, Kannur",
       period: "2020 — 2022",
-      note: "Vocational track that introduced me to software development and set me on the path to becoming a full-stack developer.",
+      note: "Vocational track that introduced me to software development and set me on the path to becoming a MERN stack developer.",
     },
   ],
   projects: [
