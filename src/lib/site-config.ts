@@ -62,28 +62,28 @@ export const siteConfig = {
       terminal: true,
     },
     {
+      name: "AshikNow",
+      description:
+        "A live personal stats hub — one terminal-styled page pulling live data from every platform I'm on: code, chess, typing, music, films and more, with journey pages and compare mode.",
+      tech: ["TypeScript", "Next.js", "React", "Vercel"],
+      repo: "https://github.com/Ashik234/AshikNow",
+      live: "https://ashiknow.vercel.app",
+    },
+    {
+      name: "Pause-ture",
+      description:
+        "A Windows break-reminder app that actually stops you — fullscreen countdown-gated popups for eye, posture, water and walk breaks, with idle detection and a ~4 MB Tauri installer.",
+      tech: ["Rust", "Tauri", "TypeScript"],
+      repo: "https://github.com/Ashik234/Pause-ture",
+      live: "",
+    },
+    {
       name: "Matchday",
       description:
         "A football World Cup companion app — fixtures, teams and match data in a fast, modern interface.",
       tech: ["TypeScript", "Next.js", "React"],
       repo: "https://github.com/Ashik234/Matchday",
       live: "https://matchday-worldcup.vercel.app",
-    },
-    {
-      name: "DEVNET",
-      description:
-        "A full-stack platform for developers to connect, learn and collaborate, with profiles, posts and discussions.",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
-      repo: "https://github.com/Ashik234/DEVNET-FRONTEND",
-      live: "https://devnetapp.vercel.app",
-    },
-    {
-      name: "Gaming Deck",
-      description:
-        "An e-commerce platform for gaming accessories with secure payments and advanced search and filtering.",
-      tech: ["JavaScript", "React", "Node.js"],
-      repo: "https://github.com/Ashik234/Gaming-Deck",
-      live: "https://gaming-deck.onrender.com",
     },
   ],
   awards: [
