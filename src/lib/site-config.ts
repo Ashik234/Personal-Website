@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Ashik",
   role: "MERN stack developer",
-  bio: "MERN stack developer focused on the front end. I build web interfaces with React and Next.js.",
+  bio: "I build web applications end to end, from React and Next.js interfaces to Node.js, real-time APIs and cloud deployments.",
   about:
-    "I'm a MERN stack developer based in Kannur, Kerala, currently working at Dignizant Technologies. I work mostly on the front end — building interfaces with React, Next.js and TypeScript — and also handle the back end with Node.js and databases when needed. I started self-taught with the MERN stack and have shipped real products since.",
+    "I'm a MERN stack developer based in Kannur, Kerala, currently working at Dignizant Technologies. I work mostly on the front end, building interfaces with React, Next.js and TypeScript, and also handle the back end with Node.js and databases when needed. I started self-taught with the MERN stack and have shipped real products since.",
   skills: [
     "TypeScript",
     "JavaScript",
@@ -40,9 +40,9 @@ export const siteConfig = {
       location: "Surat, Gujarat",
       period: "2024 — Present",
       highlights: [
-        "Build and maintain a multi-module SaaS workspace platform — spaces, channels, boards, threads and activity feeds — with React, TypeScript, Vite and Tailwind CSS.",
+        "Build and maintain a multi-module SaaS workspace platform with spaces, channels, boards, threads and activity feeds, using React, TypeScript, Vite and Tailwind CSS.",
         "Ship real-time collaboration over Socket.IO and REST APIs, plus AI document workflows covering uploads, streaming responses and in-app viewing.",
-        "Work across the stack on a team messaging platform — auth UI, file drive, contacts and chat end to end — with an offline-capable client layer using IndexedDB and SQLite.",
+        "Work across the stack on a team messaging platform, covering auth UI, file drive, contacts and chat end to end, with an offline-capable client layer using IndexedDB and SQLite.",
         "Own deployment and infrastructure for a client product on AWS EC2 and S3 with Docker, Nginx and SSL, backed by Node.js, Express and MongoDB, PostgreSQL and Prisma.",
         "Build third-party integrations syncing CRM, accounting and estimation data via OAuth, webhooks, n8n and Zapier, alongside FHIR interoperability and Stellar (SEP-31) payments.",
       ],
@@ -68,7 +68,7 @@ export const siteConfig = {
     {
       name: "Smart AI Test Suite (SAT)",
       description:
-        "A unified CLI that uses AI agents to generate, run and auto-fix unit tests — analyzing code structure, dependencies and edge cases to produce ready-to-run tests in minutes.",
+        "A unified CLI that uses AI agents to generate, run and auto-fix unit tests, analyzing code structure, dependencies and edge cases to produce ready-to-run tests in minutes.",
       tech: ["TypeScript", "Node.js", "Groq", "Llama 3.3", "Jest"],
       repo: "",
       live: "https://www.npmjs.com/package/smart-ai-terminal",
@@ -77,7 +77,7 @@ export const siteConfig = {
     {
       name: "AshikNow",
       description:
-        "A live personal stats hub — one terminal-styled page pulling live data from every platform I'm on: code, chess, typing, music, films and more, with journey pages and compare mode.",
+        "A live personal stats hub. One terminal-styled page pulling live data from every platform I'm on: code, chess, typing, music, films and more, with journey pages and compare mode.",
       tech: ["TypeScript", "Next.js", "React", "Vercel"],
       repo: "https://github.com/Ashik234/AshikNow",
       live: "https://ashiknow.vercel.app",
@@ -85,7 +85,7 @@ export const siteConfig = {
     {
       name: "Pause-ture",
       description:
-        "A Windows break-reminder app that actually stops you — fullscreen countdown-gated popups for eye, posture, water and walk breaks, with idle detection and a ~4 MB Tauri installer.",
+        "A Windows break-reminder app that actually stops you, with fullscreen countdown-gated popups for eye, posture, water and walk breaks, idle detection and a ~4 MB Tauri installer.",
       tech: ["Rust", "Tauri", "TypeScript"],
       repo: "https://github.com/Ashik234/Pause-ture",
       live: "",
@@ -93,7 +93,7 @@ export const siteConfig = {
     {
       name: "Matchday",
       description:
-        "A football World Cup companion app — fixtures, teams and match data in a fast, modern interface.",
+        "A football World Cup companion app with fixtures, teams and match data in a fast, modern interface.",
       tech: ["TypeScript", "Next.js", "React"],
       repo: "https://github.com/Ashik234/Matchday",
       live: "https://matchday-worldcup.vercel.app",
