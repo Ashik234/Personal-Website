@@ -37,16 +37,25 @@ export default function AboutPage() {
           )}
         </p>
 
-        <ul className="mt-8 flex flex-wrap gap-2">
-          {siteConfig.skills.map((skill) => (
-            <li
-              key={skill}
-              className="rounded-full border border-black/15 bg-neutral-100 px-3 py-1 text-sm text-neutral-700 dark:border-white/15 dark:bg-neutral-900 dark:text-neutral-300"
-            >
-              {skill}
-            </li>
+        <dl className="mt-8 max-w-2xl space-y-5">
+          {siteConfig.skills.map((group) => (
+            <div key={group.category} className="sm:flex sm:gap-5">
+              <dt className="shrink-0 pt-1 text-sm text-neutral-400 dark:text-neutral-500 sm:w-24 sm:text-right">
+                {group.category}
+              </dt>
+              <dd className="mt-2 flex flex-wrap gap-2 sm:mt-0">
+                {group.items.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-black/15 bg-neutral-100 px-3 py-1 text-sm text-neutral-700 dark:border-white/15 dark:bg-neutral-900 dark:text-neutral-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </dd>
+            </div>
           ))}
-        </ul>
+        </dl>
       </motion.div>
     </section>
   );
