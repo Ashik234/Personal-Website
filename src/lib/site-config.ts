@@ -58,6 +58,7 @@ export const siteConfig = {
     {
       qualification: "MERN Stack Development",
       school: "Brototype",
+      schoolUrl: "https://www.brototype.com/",
       location: "Kozhikode, Kerala",
       period: "2023 — 2024",
       note: "Intensive mentored program covering front-end, back-end and full-stack development, where I built and deployed multiple MERN projects and grew from self-taught fundamentals to shipping complete applications.",

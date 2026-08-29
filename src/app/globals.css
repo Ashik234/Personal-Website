@@ -62,13 +62,18 @@
     @apply border-border;
   }
   html {
-    scroll-behavior: smooth;
     scroll-padding-top: 6rem; /* offset for the fixed navbar */
-    scroll-snap-type: y proximity;
   }
+  /* Smooth only for anchor jumps, and only if the user hasn't asked for less motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  /* Keeps nav anchors clear of the fixed navbar. No scroll-snap: snapping fought
+     the user on sections taller than the viewport. */
   .snap-section {
-    scroll-snap-align: start;
-    scroll-snap-margin-top: 6rem;
+    scroll-margin-top: 6rem;
   }
   body {
     @apply bg-background text-foreground;

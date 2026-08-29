@@ -35,7 +35,22 @@ export default function EducationPage() {
               {edu.qualification}
             </h3>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {edu.school} · {edu.location}
+              {(() => {
+                const schoolUrl = (edu as { schoolUrl?: string }).schoolUrl;
+                if (schoolUrl)
+                  return (
+                    <a
+                      href={schoolUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-neutral-700 underline decoration-dotted underline-offset-2 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white sm:whitespace-nowrap"
+                    >
+                      {edu.school}
+                    </a>
+                  );
+                return edu.school;
+              })()}{" "}
+              · {edu.location}
             </p>
 
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
