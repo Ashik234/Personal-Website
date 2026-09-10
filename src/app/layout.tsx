@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif, Fraunces } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider from "../components/theme/ThemeProvider";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -37,6 +38,7 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
