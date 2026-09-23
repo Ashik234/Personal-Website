@@ -138,7 +138,7 @@ export const siteConfig = {
   ],
   available: true,
   availabilityText: "Available for work",
-  resumePath: "/resume.pdf",
+  resumePath: "/Ashik_k.pdf",
   photoPath: "/profile.jpg",
   socials: {
     github: "https://github.com/Ashik234",
